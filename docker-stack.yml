@@ -28,7 +28,7 @@ services:
     networks:
       - frontend
     deploy:
-      replicas: 2
+      replicas: 3
 
   result:
     image: dockersamples/examplevotingapp_result
@@ -36,6 +36,8 @@ services:
       - 5001:80
     networks:
       - backend
+    deploy:
+      replicas: 3
 
   worker:
     image: dockersamples/examplevotingapp_worker
@@ -43,7 +45,7 @@ services:
       - frontend
       - backend
     deploy:
-      replicas: 2
+      replicas: 3
 
 networks:
   frontend:
