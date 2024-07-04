@@ -56,6 +56,12 @@ kubectl delete -f k8s-specifications/
 * A [Postgres](https://hub.docker.com/_/postgres/) database backed by a Docker volume
 * A [Node.js](/result) web app which shows the results of the voting in real time
 
+## Using External postgres and redis
+
+1. Change redis host information in `vote/app.py` and `worker/Program.cs`
+2. Change postgres credentials in `worker/Program.cs` and `result/server.js`
+
+If you have more time and are very concerned about the security of credentials in postgres, you can store them in variables or other secret managers. 
 ## Notes
 
 The voting application only accepts one vote per client browser. It does not register additional votes if a vote has already been submitted from a client.
