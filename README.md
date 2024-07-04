@@ -56,7 +56,7 @@ kubectl delete -f k8s-specifications/
 * A [Postgres](https://hub.docker.com/_/postgres/) database backed by a Docker volume
 * A [Node.js](/result) web app which shows the results of the voting in real time
 
-## Using External postgres and redis
+## Using External PostgreSQL and Redis
 
 1. Change redis host information in `vote/app.py` and `worker/Program.cs`
 2. Change postgres credentials in `worker/Program.cs` and `result/server.js`
