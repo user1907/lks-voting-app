@@ -62,7 +62,7 @@ jobs:
   
   master:
     name: Pull Image on master
-    depends: build
+    needs: build
     runs-on: master
     steps:
       - name: Update runner's docker Version, as worker module requires it
@@ -96,7 +96,7 @@ jobs:
     
   node02:
     name: Pull Image on node2
-    depends: build
+    needs: build
     runs-on: node2
     steps:
       - name: Update runner's docker Version, as worker module requires it
@@ -130,7 +130,7 @@ jobs:
     
   node01:
     name: Pull Image on node1
-    depends: build
+    needs: build
     runs-on: node1
     steps:
       - name: Update runner's docker Version, as worker module requires it
