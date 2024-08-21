@@ -2,7 +2,7 @@ name: Example pull image
 on:
   push:
     branches:
-      - "dev"
+      - "devnope"
 
 env:
   AWS_REGION : "us-east-1"
