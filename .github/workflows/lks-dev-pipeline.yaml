@@ -91,7 +91,7 @@ jobs:
           IMAGE_TAG: worker-${{ env.ENV }}-latest
         # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
         run: |
-          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:IMAGE_TAG   
+          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG   
     
   node02:
     name: Pull Image on node2
@@ -124,7 +124,7 @@ jobs:
           IMAGE_TAG: worker-${{ env.ENV }}-latest
         # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
         run: |
-          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:IMAGE_TAG   
+          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG   
     
   node01:
     name: Pull Image on node1
@@ -157,5 +157,5 @@ jobs:
           IMAGE_TAG: worker-${{ env.ENV }}-latest
         # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
         run: |
-          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:IMAGE_TAG   
+          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG   
     
