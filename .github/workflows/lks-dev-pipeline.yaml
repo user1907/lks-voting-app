@@ -158,4 +158,19 @@ jobs:
         # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
         run: |
           docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG   
-    
+  
+  deploy:
+    name: Deploy changes in dev branch
+    runs-on: master
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Deploy application images to Docker Swarm
+        run: |
+          docker node ls
+          docker service ls
+          docker stack ls
+          docker stack rm stackdemo
+          sleep 30
+          docker stack deploy --compose-file docker-stack.yml stackdemo
