@@ -128,7 +128,7 @@ jobs:
         run: |
           docker pull $ECR_REGISTRY/$ECR_REPOSITORY:IMAGE_TAG   
     
-    node01:
+  node01:
     name: Pull Image on node1
     depends: build
     runs-on: node1
